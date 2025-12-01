@@ -7,6 +7,10 @@
 }
 
 body {
+<<<<<<< HEAD
+=======
+    font-family: Arial, sans-serif;
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     overflow-x: hidden;
     background-color: #191919;
     color: #bfbfbf;
@@ -65,15 +69,22 @@ a:hover {
     transition: all 1s ease-out;
     white-space: nowrap;
     text-align: center;
+<<<<<<< HEAD
     margin-top: 10vh;
+=======
+    padding-top: 10vh;
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     margin-bottom: -1em;
     text-shadow: 3px 3px 5px black;
 }
 
+<<<<<<< HEAD
 #nameText {
     cursor: pointer;
 }
 
+=======
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
 .subtitle {
     font-size: 5rem;
     margin-bottom: 2rem;
@@ -147,7 +158,18 @@ a:hover {
     padding: 0 20px;
 }
 
+<<<<<<< HEAD
 header {
+=======
+.name-heading-m,
+.word-urban,
+.word-pulse,
+.word-streetwear {
+    display: none;
+}
+
+header{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -158,7 +180,11 @@ header {
     z-index: 10;
 }
 
+<<<<<<< HEAD
 header nav ul {
+=======
+header nav ul{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     padding: 0;
     margin: 0;
     list-style: none;
@@ -166,22 +192,37 @@ header nav ul {
     gap: 30px;
 }
 
+<<<<<<< HEAD
 :root {
+=======
+:root{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     --width-circle: 150vw;
     --radius: calc(100vw / 6);
 }
 
+<<<<<<< HEAD
 .slider {
     width: 100vw;
     height: 120vh;
     overflow: hidden;
+=======
+.slider{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     position: relative;
     background-color: #17232A;
     background-image: radial-gradient(#fff3, transparent 50%);
     margin-top: -50px;
 }
 
+<<<<<<< HEAD
 .slider .list {
+=======
+.slider .list{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     position: absolute;
     width: max-content;
     height: 100%;
@@ -191,23 +232,36 @@ header nav ul {
     transition: transform 0.8s;
 }
 
+<<<<<<< HEAD
 .slider .list .item {
+=======
+.slider .list .item{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     width: calc(var(--radius) * 2);
     text-align: center;
     transform: rotate(45deg);
     transition: transform 1s;
 }
 
+<<<<<<< HEAD
 .slider .list .item.active {
     transform: rotate(0deg);
 }
 
 .slider .list .item img {
+=======
+.slider .list .item.active{
+    transform: rotate(0deg);
+}
+
+.slider .list .item img{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     width: 90%;
     filter: drop-shadow(0 0 20px #000);
     border-radius: 100%;
 }
 
+<<<<<<< HEAD
 .content {
     position: absolute;
     text-align: center;
@@ -247,6 +301,19 @@ header nav ul {
 }
 
 button {
+=======
+.content{
+    position: absolute;
+    bottom: 1%;
+    text-align: center;
+    justify-content: center;
+    color: #eee;
+    width: max-content;
+    font-size: 5rem;
+}
+
+button{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     cursor: pointer;
     transition: all 0.3s;
     font-size: 2rem;
@@ -257,7 +324,11 @@ button {
     transform: translateX(-50%);
 }
 
+<<<<<<< HEAD
 .slider .content div:nth-child(2) {
+=======
+.slider .content div:nth-child(2){
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     font-size: 5rem;
     text-transform: uppercase;
     letter-spacing: 10px;
@@ -265,24 +336,40 @@ button {
     position: relative;
 }
 
+<<<<<<< HEAD
 .slider .content div:nth-child(2)::before {
+=======
+.slider .content div:nth-child(2)::before{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     position: absolute;
     left: 60%;
     bottom: 50%;
     width: 80px;
     height: 80px;
     content: '';
+<<<<<<< HEAD
+=======
+    background-image: url(img/leaves.png);
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+<<<<<<< HEAD
 .slider .content div:nth-child(1) {
+=======
+.slider .content div:nth-child(1){
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     text-align: left;
     text-transform: uppercase;
     transform: translateY(20px);
 }
 
+<<<<<<< HEAD
 .slider .content button {
+=======
+.slider .content button{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     border: 1px solid #eee5;
     background: transparent;
     color: #eee;
@@ -293,7 +380,11 @@ button {
 }
 
 #prev,
+<<<<<<< HEAD
 #next {
+=======
+#next{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -310,6 +401,7 @@ button {
     z-index: 15;
 }
 
+<<<<<<< HEAD
 #prev {
     left: 20px;
 }
@@ -319,6 +411,17 @@ button {
 }
 
 .circle {
+=======
+#prev{
+    left: 20px;
+}
+
+#next{
+    right: 20px;
+}
+
+.circle{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     pointer-events: none;
     position: absolute;
     top: 0%;
@@ -328,10 +431,20 @@ button {
     -webkit-mask: radial-gradient(var(--radius), transparent 100%, #000);
     mask: radial-gradient(var(--radius), #0000 98%, #000);
     backdrop-filter: blur(10px);
+<<<<<<< HEAD
     background: radial-gradient(calc(var(--radius) + 1px), #eee5 100%, #eee2);
 }
 
 .circle span {
+=======
+    background: radial-gradient( 
+        calc(var(--radius) + 1px), #eee5 100%, #eee2
+    );
+    
+}
+
+.circle span{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     display: block;
     position: absolute;
     height: calc(var(--radius) * 2 + 50px);
@@ -345,8 +458,13 @@ button {
     animation: circleRotate 20s linear infinite;
 }
 
+<<<<<<< HEAD
 @keyframes circleRotate {
     to {
+=======
+@keyframes circleRotate{
+    to{
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
         transform: translate(-50%, -50%) rotate(calc(var(--rotate) + 360deg));
     }
 }

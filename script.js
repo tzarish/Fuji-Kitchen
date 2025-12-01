@@ -4,6 +4,7 @@ const mainContent = document.getElementById('mainContent');
 const typingText = document.getElementById('typing-text');
 const nav = document.getElementById('nav');
 const subtitle = document.getElementById('subtitle');
+<<<<<<< HEAD
 const navShop = document.querySelector('.nav-shop');
 const navAbout = document.querySelector('.nav-about');
 const carousel = document.querySelector('.circle');
@@ -18,6 +19,13 @@ function typeHeading() {
     const fullText = "Fuji Kitchen";
     const typingSpeed = 40;
     let currentIndex = -10;
+=======
+
+function typeHeading() {
+    const fullText = "Fuji Kitchen";
+    const typingSpeed = 75;
+    let currentIndex = 0;
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
 
     const typeInterval = setInterval(() => {
         if (currentIndex < fullText.length) {
@@ -96,6 +104,10 @@ function startSubtitleTyping() {
 
 typeHeading();
 
+<<<<<<< HEAD
+=======
+// carousel func from youtube
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
 let circle = document.querySelector('.circle');
 let slider = document.querySelector('.slider');
 let list = document.querySelector('.list');
@@ -123,12 +135,20 @@ prev.onclick = () => {
 
 function runCarousel() {
     width_item = items[active].offsetWidth;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     prev.style.display = (active == 0) ? 'none' : 'block';
     next.style.display = (active == count - 1) ? 'none' : 'block';
 
     let old_active = document.querySelector('.item.active');
+<<<<<<< HEAD
     if (old_active) old_active.classList.remove('active');
+=======
+    if(old_active) old_active.classList.remove('active');
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
     items[active].classList.add('active');
 
     leftTransform = width_item * (active - 1) * -1;
@@ -142,6 +162,7 @@ textCircle.forEach((value, key) => {
     newSpan.innerText = value;
     let rotateThisSpan = (360 / textCircle.length) * (key + 1);
     newSpan.style.setProperty('--rotate', rotateThisSpan + 'deg');
+<<<<<<< HEAD
     circle.appendChild(newSpan);
 });
 
@@ -160,3 +181,7 @@ navAbout.onclick = () => {
         inline: "nearest"
     });
 }
+=======
+    circle.appendChild(newSpan); 
+});
+>>>>>>> 185d90e5444b1186c5c0857e08815eb939fa2446
