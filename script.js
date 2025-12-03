@@ -196,7 +196,7 @@ textCircle.forEach((value, key) => {
 let listBg = document.querySelectorAll(".bg");
 let parallaxTextLayer = document.getElementById("parallaxTextLayer");
 let archContainer = document.querySelector(".arch-container");
-const scrollSpeed = 0.4;
+const scrollSpeed = 0.6;
 let minScrollValue = 0;
 
 window.addEventListener(
