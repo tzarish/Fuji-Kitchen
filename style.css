@@ -302,13 +302,33 @@ a:hover {
 }
 
 .content {
-  position: absolute;
-  bottom: 1%;
-  text-align: center;
-  justify-content: center;
-  color: #eee;
-  width: max-content;
-  font-size: 5rem;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    color: #eee;
+    font-size: 5rem;
+    width: 100%;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#see-more {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    border: 2px solid #e1a6ad;
+    background-color: #e1a6ad;
+    color: #191919;
+    padding: 0.5em 1em;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50px;
+    font-family: "Grenze Gotisch", serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 button {
