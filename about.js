@@ -1,4 +1,3 @@
-// Ensure phone/tablet bottom nav appears on About page as well
 (function ensureBottomNavOnAbout(){
   function createPhoneBottomNav(){
     if (document.querySelector('.phone-bottom-nav')) return;
@@ -26,7 +25,6 @@
     }
   }
 
-  // Run once and on resize so About page mirrors index behavior
   maybeCreateOrRemove();
   window.addEventListener('resize', maybeCreateOrRemove);
 })();
