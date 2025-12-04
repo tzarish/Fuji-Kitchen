@@ -1,0 +1,91 @@
+/* Styles extracted from about.html */
+
+.about-hero {
+  padding-top: 120px;
+  text-align: center;
+}
+
+.about-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-hero-content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.about-hero-image {
+  width: 420px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.about-hero-text {
+  max-width: 540px;
+  color: rgba(255,255,255,0.95);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.team {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 30px 20px;
+}
+
+.team .menu-title {
+  font-size: 2.6rem;
+}
+
+.team-description {
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+  max-width: 820px;
+  margin: 12px auto 28px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.team-card {
+  background: rgba(29,30,34,0.6);
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.team-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.team-card h3 {
+  margin-top: 12px;
+}
+
+.team-card p {
+  color: rgba(255,255,255,0.75);
+}
+
+.site-footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+}
+
+/* (Nav styles moved into global style.css) */

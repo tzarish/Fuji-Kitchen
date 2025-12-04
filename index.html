@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuji Kitchen</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Fuji Kitchen - Authentic Japanese Cuisine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+
     <header class="main-header">
-        <nav class="nav-container">
-            <ul class="nav-links" style="list-style: none; display: flex; gap: 20px">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" style="display: none">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+        <nav class="nav-container" role="navigation" aria-label="Main navigation">
+            <a class="skip-link" href="#main">Skip to content</a>
+            <div class="brand-logo">
+                <span class="brand-icon" aria-hidden="true">🍱</span>
+                <span class="brand-name">Fuji Kitchen</span>
+            </div>
+
+            <button id="navToggle" class="nav-toggle" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
             </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a class="nav-contact nav-cta" href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
-
-    <nav id="nav">
-        <a class="nav-shop">Shop</a>
-        <a class="nav-about">About</a>
-    </nav>
 
     <div class="container">
         <div class="banner" id="home">
@@ -54,80 +62,82 @@
                             <span id="typing-text"></span>
                             <span id="cursor-inline" class="cursor">|</span>
                         </p>
+                        <div class="hero-ctas">
+                            <a class="cta-outline" href="#reservation" aria-label="Make a reservation">Reserve</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-    <div class="slider">
-        <div class="list">
-            <div class="item">
-                <img src="img/1.png">
+        <div class="slider">
+            <div class="list">
+                <div class="item"><img src="img/1.png" alt="Sushi"></div>
+                <div class="item active"><img src="img/2.png" alt="Ramen"></div>
+                <div class="item"><img src="img/3.png" alt="Tempura"></div>
+                <div class="item"><img src="img/4.png" alt="Teriyaki"></div>
+                <div class="item"><img src="img/5.png" alt="Sashimi"></div>
+                <div class="item"><img src="img/6.png" alt="Katsu"></div>
+                <div class="item"><img src="img/7.png" alt="Udon"></div>
+                <div class="item"><img src="img/8.png" alt="Onigiri"></div>
+                <div class="item"><img src="img/9.png" alt="Mochi"></div>
+                <div class="item"><img src="img/10.png" alt="Takoyaki"></div>
+                <div class="item"><img src="img/11.png" alt="Shabu-Shabu"></div>
+                <div class="item"><img src="img/12.png" alt="Kaiseki"></div>
             </div>
-            <div class="item active">
-                <img src="img/2.png">
+            <div class="circle">
+                SUSHI - RAMEN - TEMPURA - TERIYAKI - SASHIMI - KATSU - UDON - ONIGIRI - MOCHI - TAKOYAKI - SHABU-SHABU - KAISEKI -
             </div>
-            <div class="item">
-                <img src="img/3.png">
+            <div class="content">
+                <a id="see-more" href="menu.html" aria-label="View our menu">See Menu</a>
             </div>
-            <div class="item">
-                <img src="img/4.png">
-            </div>
-            <div class="item">
-                <img src="img/5.png">
-            </div>
-            <div class="item">
-                <img src="img/6.png">
-            </div>
-            <div class="item">
-                <img src="img/7.png">
-            </div>
-            <div class="item">
-                <img src="img/8.png">
-            </div>
-            <div class="item">
-                <img src="img/9.png">
-            </div>
-            <div class="item">
-                <img src="img/10.png">
-            </div>
-            <div class="item">
-                <img src="img/11.png">
-            </div>
-            <div class="item">
-                <img src="img/12.png">
+            <div class="arow">
+                <button id="prev" aria-label="Previous dish"><</button>
+                <button id="next" aria-label="Next dish">></button>
             </div>
         </div>
-        <div class="circle">
-            SUSHI - RAMEN - TEMPURA - TERIYAKI - SASHIMI - KATSU - UDON - ONIGIRI - MOCHI - TAKOYAKI - SHABU-SHABU - KAISEKI - 
+
+        <div class="reservation" id="reservation">
+            <h2 class="reservation-title">Make a Reservation</h2>
+            <p class="reservation-subtitle">Reserve your table at Fuji Kitchen</p>
+            <form id="reservationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="guests" name="guests" placeholder="Number of Guests" min="1" max="20" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="date" id="date" name="date" required aria-label="Reservation date">
+                    </div>
+                    <div class="form-group">
+                        <input type="time" id="time" name="time" required aria-label="Reservation time">
+                    </div>
+                </div>
+                <button type="submit" class="reservation-btn">
+                    <span>Reserve Now</span>
+                </button>
+            </form>
         </div>
-        <div class="content">
-            <a id="see-more" href="menu.html">See Menu</a>
+
+        <div class="reservation-notification" id="reservationNotification">
+            <span class="notification-icon">✓</span>
+            <span class="notification-text">Reservation submitted successfully!</span>
         </div>
-        <div class="arow">
-            <button id="prev"><</button>
-            <button id="next">></button>
-        </div>
+
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
     </div>
-
-    <main>
-        <section class="about-us">
-            <h2>About Us</h2>
-            <p>Welcome to Fuji Kitchen, where we bring the authentic flavors of Japan to your table. Our chefs are
-                dedicated to crafting traditional dishes using the freshest ingredients, ensuring a delightful dining
-                experience for every guest.</p>
-        </section>
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or would like to make a reservation, please reach out to us at:</p>
-            <ul>
-                <li>Email:</li>
-                <li>info@fuji-kitchen.com</li>
-            </ul>
-        </section>
-    </main>
-
     <script src="script.js"></script>
 </body>
-
 </html>

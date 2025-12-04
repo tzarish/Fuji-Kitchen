@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuji Kitchen - Menu</title>
+    <link rel="icon" href="img/favicon.png" />
     <link rel="stylesheet" href="menu.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +17,20 @@
 </head>
 
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Floating Cherry Blossom Petals -->
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+
     <h1 class="name-heading-menu" id="nameHeading">
         <span id="nameTextMenu"></span><span class="cursor" id="cursor">|</span>
     </h1>
@@ -23,11 +38,20 @@
     <div id="mainContent" class="main-content-menu">
         <h2 class="menu-title">Our Menu</h2>
 
+        <!-- Filter Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Items</button>
+            <button class="filter-btn" data-filter="sushi">Sushi & Sashimi</button>
+            <button class="filter-btn" data-filter="noodles">Noodles</button>
+            <button class="filter-btn" data-filter="sides">Sides & Appetizers</button>
+            <button class="filter-btn" data-filter="special">Special Dishes</button>
+        </div>
+
         <div class="container">
             <header>
-                <h1 class = "shopping-cart-title">Your Shopping Cart</h1>
+                <h1 class="shopping-cart-title">Your Shopping Cart</h1>
                 <div class="shopping">
-                    <img src="img/shopping.svg">
+                    <img src="img/shopping.svg" alt="Shopping Cart">
                     <span class="quantity">0</span>
                 </div>
             </header>
@@ -39,31 +63,20 @@
             <h1>Your Cart</h1>
             <ul class="listCard">
             </ul>
+            <div class="empty-cart" id="emptyCart">
+                <p>Your cart is empty</p>
+                <p>🍱 Add some delicious items!</p>
+            </div>
             <div class="checkOut">
-                <div class="total">Your Total:</div>
+                <div class="total">Your Total: $0</div>
                 <div class="closeShopping">Close</div>
             </div>
         </div>
     </div>
-    
-    <br>
-    <hr>
-    <main>
-        <section class="about-us">
-            <h2>About Us</h2>
-            <p>Welcome to Fuji Kitchen, where we bring the authentic flavors of Japan to your table. Our chefs are
-                dedicated to crafting traditional dishes using the freshest ingredients, ensuring a delightful dining
-                experience for every guest.</p>
-        </section>
 
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or would like to make a reservation, please reach out to us at:</p>
-            <ul>
-                <li>Email:</li>
-                <li>info@fuji-kitchen.com</li>
-            </ul>
-    </main>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">↑</button>
+
     <script src="menu.js"></script>
 </body>
 
