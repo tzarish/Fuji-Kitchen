@@ -1,13 +1,10 @@
-// SVG Arched text setup with enhanced animations
 const text = "Fuji Kitchen";
 const svgArchContainer = document.getElementById("fujiArch");
 
-// Create SVG with shallow arch path
 const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 svg.setAttribute("viewBox", "0 0 1200 400");
 svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
 
-// Define enhanced gradient with more color stops
 const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
 const gradient = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
 gradient.setAttribute("id", "textGradient");
@@ -35,7 +32,6 @@ stops.forEach((s) => {
 defs.appendChild(gradient);
 svg.appendChild(defs);
 
-// Create shallow arch path
 const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 path.setAttribute("id", "archPath");
 path.setAttribute("d", "M 150 280 Q 600 300 1050 280");
@@ -43,11 +39,10 @@ path.setAttribute("fill", "none");
 
 svg.appendChild(path);
 
-// Create individual text elements for each letter with stagger effect
 const letters = text.split("");
 const letterElements = [];
 const pathLength = 900;
-const letterSpacing = 8;
+const letterSpacing = 7.8;
 
 letters.forEach((char, index) => {
   const textElement = document.createElementNS("http://www.w3.org/2000/svg", "text");
@@ -61,7 +56,7 @@ letters.forEach((char, index) => {
 
   const textPath = document.createElementNS("http://www.w3.org/2000/svg", "textPath");
   textPath.setAttribute("href", "#archPath");
-  const offset = index * letterSpacing + 10;
+  const offset = 10 + (index * letterSpacing);
   textPath.setAttribute("startOffset", offset + "%");
   textPath.textContent = char;
 
@@ -77,7 +72,6 @@ letters.forEach((char, index) => {
 
 svgArchContainer.appendChild(svg);
 
-// Add hover effect to letters
 letterElements.forEach((letter) => {
   letter.element.addEventListener('mouseenter', () => {
     letter.element.style.filter = "drop-shadow(0 15px 65px rgba(240, 110, 170, 0.5)) drop-shadow(0 8px 30px rgba(255, 169, 137, 0.5))";
@@ -88,7 +82,6 @@ letterElements.forEach((letter) => {
   });
 });
 
-// Subtitle typing animation with enhanced effects
 const subtitleSection = document.getElementById("subtitleSection");
 const typingText = document.getElementById("typing-text");
 
@@ -147,7 +140,6 @@ function startSubtitleTyping() {
   type();
 }
 
-// NAV TOGGLE + SMOOTH SCROLL + ACCESSIBILITY
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 if (navToggle && navLinks) {
@@ -156,7 +148,6 @@ if (navToggle && navLinks) {
     navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
-  // Close nav on link click (mobile)
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       if (navLinks.classList.contains('open')) {
@@ -167,9 +158,7 @@ if (navToggle && navLinks) {
   });
 }
 
-// Mobile overlay handling and phone bottom nav injection
 (function setupMobileExtras(){
-  // create overlay element
   let overlay = document.querySelector('.mobile-nav-overlay');
   if (!overlay) {
     overlay = document.createElement('div');
@@ -181,17 +170,14 @@ if (navToggle && navLinks) {
     if (isOpen) overlay.classList.add('visible'); else overlay.classList.remove('visible');
   }
 
-  // sync overlay visibility when nav opens/closes
   if (navToggle && navLinks) {
     const origHandler = navToggle.onclick;
-    // add observer: toggle overlay when class 'open' changes
     const observer = new MutationObserver(() => {
       const isOpen = navLinks.classList.contains('open');
       openCloseOverlay(isOpen);
     });
     observer.observe(navLinks, { attributes: true, attributeFilter: ['class'] });
 
-    // close on overlay click
     overlay.addEventListener('click', () => {
       if (navLinks.classList.contains('open')) {
         navLinks.classList.remove('open');
@@ -201,7 +187,6 @@ if (navToggle && navLinks) {
     });
   }
 
-  // Inject a small bottom nav on phones for quick access
   function createPhoneBottomNav(){
     if (document.querySelector('.phone-bottom-nav')) return;
     const wrapper = document.createElement('nav');
@@ -213,7 +198,6 @@ if (navToggle && navLinks) {
     `;
     document.body.appendChild(wrapper);
 
-    // mark active based on current path
     const path = location.pathname.split('/').pop() || 'index.html';
     wrapper.querySelectorAll('a').forEach(a => {
       const href = a.getAttribute('href');
@@ -233,7 +217,6 @@ if (navToggle && navLinks) {
   window.addEventListener('resize', maybeCreateBottomNav);
 })();
 
-// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
@@ -249,7 +232,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Close mobile nav on Escape
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     if (navLinks && navLinks.classList.contains('open')) {
@@ -260,7 +242,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Enhanced Carousel functionality
 let circle = document.querySelector(".circle");
 let slider = document.querySelector(".slider");
 let list = document.querySelector(".list");
@@ -302,38 +283,30 @@ function runCarousel() {
   
   width_item = items[0].offsetWidth;
 
-  // Update button visibility
   prev.style.display = active == 0 ? "none" : "block";
   next.style.display = active == count - 1 ? "none" : "block";
 
-  // Remove active class from all items
   items.forEach(item => item.classList.remove("active"));
   
-  // Add active class to current item
   items[active].classList.add("active");
 
-  // Calculate transform based on current active item
   leftTransform = width_item * (active - 1) * -1;
   list.style.transform = `translateX(${leftTransform}px)`;
   
-  // Reset animation lock after transition
   setTimeout(() => {
     isAnimating = false;
   }, 1000);
 }
 
-// Auto-play carousel
 function startAutoPlay() {
   autoPlayInterval = setInterval(() => {
     if (!isAnimating) {
       if (active < count - 1) {
         active++;
-        runCarousel();
       } else {
-        // Reset to beginning
         active = 0;
-        runCarousel();
       }
+      runCarousel();
     }
   }, 4000);
 }
@@ -343,7 +316,6 @@ function resetAutoPlay() {
   startAutoPlay();
 }
 
-// Pause auto-play on hover
 slider.addEventListener('mouseenter', () => {
   clearInterval(autoPlayInterval);
 });
@@ -352,7 +324,6 @@ slider.addEventListener('mouseleave', () => {
   startAutoPlay();
 });
 
-// Enhanced circle text animation
 let textCircle = circle.innerText.split("");
 circle.innerText = "";
 textCircle.forEach((value, key) => {
@@ -363,7 +334,6 @@ textCircle.forEach((value, key) => {
   circle.appendChild(newSpan);
 });
 
-// Enhanced Parallax scroll effect with easing
 let listBg = document.querySelectorAll(".bg");
 let parallaxTextLayer = document.getElementById("parallaxTextLayer");
 let archContainer = document.querySelector(".arch-container");
@@ -392,7 +362,6 @@ window.addEventListener("wheel", function (event) {
 
 function updateParallax(top) {
   if (archContainer) {
-    // Enhanced letter rotation with wave effect
     letterElements.forEach((letter, index) => {
       const rotationPerLetter = top * 0.35;
       const cycleLength = 300;
@@ -424,7 +393,6 @@ function updateParallax(top) {
   updateScrollProgress();
 }
 
-// Scroll progress bar
 function updateScrollProgress() {
   const progressBar = document.getElementById('scrollProgress');
   const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -432,7 +400,6 @@ function updateScrollProgress() {
   progressBar.style.width = scrolled + '%';
 }
 
-// Back to top button with smooth animation
 function setupBackToTop() {
   const backToTop = document.getElementById('backToTop');
   
@@ -445,27 +412,19 @@ function setupBackToTop() {
   });
   
   backToTop.addEventListener('click', () => {
-    const scrollDuration = 800;
-    const scrollStep = -window.scrollY / (scrollDuration / 15);
-    
-    const scrollInterval = setInterval(() => {
-      if (window.scrollY !== 0) {
-        window.scrollBy(0, scrollStep);
-      } else {
-        clearInterval(scrollInterval);
-      }
-    }, 15);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 }
 
-// Enhanced Reservation form handling
 const reservationForm = document.getElementById('reservationForm');
 const reservationNotification = document.getElementById('reservationNotification');
 
 reservationForm.addEventListener('submit', function(e) {
   e.preventDefault();
   
-  // Get form data
   const formData = {
     name: document.getElementById('name').value,
     email: document.getElementById('email').value,
@@ -475,13 +434,11 @@ reservationForm.addEventListener('submit', function(e) {
     guests: document.getElementById('guests').value
   };
   
-  // Add loading state
   const submitBtn = reservationForm.querySelector('.reservation-btn');
   const originalText = submitBtn.innerHTML;
   submitBtn.innerHTML = '<span>Processing...</span>';
   submitBtn.disabled = true;
   
-  // Simulate processing
   setTimeout(() => {
     showReservationNotification();
     reservationForm.reset();
@@ -500,12 +457,10 @@ function showReservationNotification() {
   }, 4500);
 }
 
-// Set minimum date to today for date input
 const dateInput = document.getElementById('date');
 const today = new Date().toISOString().split('T')[0];
 dateInput.setAttribute('min', today);
 
-// Add input animations
 const formInputs = document.querySelectorAll('#reservationForm input');
 formInputs.forEach(input => {
   input.addEventListener('focus', function() {
@@ -517,13 +472,10 @@ formInputs.forEach(input => {
   });
 });
 
-// Initialize features
 setupBackToTop();
 
-// Update scroll progress on regular scroll events too
 window.addEventListener('scroll', updateScrollProgress);
 
-// Add keyboard navigation for carousel
 document.addEventListener('keydown', (e) => {
   if (isAnimating) return;
   
@@ -538,7 +490,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Add touch swipe support for mobile
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -566,7 +517,6 @@ function handleSwipe() {
   }
 }
 
-// Intersection Observer for animations
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -100px 0px'
@@ -581,37 +531,30 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe reservation section
 const reservationSection = document.querySelector('.reservation');
 if (reservationSection) {
   observer.observe(reservationSection);
 }
 
-// Page transition: smooth exit animation before navigating to another page
 document.addEventListener('DOMContentLoaded', () => {
-  // run enter animation
   document.body.classList.add('page-enter');
   requestAnimationFrame(() => {
     document.body.classList.add('page-enter-active');
   });
-  // clean up enter classes after animation
   setTimeout(() => {
     document.body.classList.remove('page-enter');
     document.body.classList.remove('page-enter-active');
   }, 520);
 
-  // intercept link clicks for smooth page-exit animation
   document.addEventListener('click', (e) => {
     const anchor = e.target.closest('a');
     if (!anchor) return;
     const href = anchor.getAttribute('href');
     if (!href) return;
 
-    // ignore hash-only, mailto, tel and external links or js handlers
     if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
     if (anchor.target === '_blank' || anchor.hasAttribute('download')) return;
 
-    // only intercept same-origin navigations
     try {
       const url = new URL(href, location.href);
       if (url.origin !== location.origin) return;
@@ -620,13 +563,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     e.preventDefault();
-    // start exit animation
     document.body.classList.add('page-exit');
     requestAnimationFrame(() => {
       document.body.classList.add('page-exit-active');
     });
 
-    // navigate after animation completes
     setTimeout(() => {
       window.location.href = href;
     }, 460);
