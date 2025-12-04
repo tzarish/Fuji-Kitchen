@@ -103,9 +103,7 @@ let products = [
 let listCards = [];
 let currentFilter = 'all';
 
-// Function to show notification
 function showNotification() {
-    // Create notification element if it doesn't exist
     let notification = document.getElementById('cartNotification');
     if (!notification) {
         notification = document.createElement('div');
@@ -115,10 +113,8 @@ function showNotification() {
         document.body.appendChild(notification);
     }
     
-    // Trigger animation
     notification.classList.add('show');
     
-    // Remove after 2 seconds
     setTimeout(() => {
         notification.classList.remove('show');
     }, 2000);
@@ -127,7 +123,6 @@ function showNotification() {
 function displayProducts(productsToShow) {
     list.innerHTML = '';
     productsToShow.forEach((value, key) => {
-        // Find the original product index
         let originalKey = products.findIndex(p => p.id === value.id);
         
         let newDiv = document.createElement('div');
@@ -181,7 +176,6 @@ function reloadCard() {
         }
     });
     
-    // Show/hide empty cart message
     if (count === 0) {
         emptyCart.style.display = 'block';
     } else {
@@ -226,7 +220,6 @@ if (nameHeading) {
     };
 }
 
-// Scroll progress bar
 function setupScrollProgress() {
     const progressBar = document.getElementById('scrollProgress');
     
@@ -237,7 +230,6 @@ function setupScrollProgress() {
     });
 }
 
-// Back to top button
 function setupBackToTop() {
     const backToTop = document.getElementById('backToTop');
     
@@ -257,15 +249,12 @@ function setupBackToTop() {
     });
 }
 
-// Filter buttons functionality
 function setupFilterButtons() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
             button.classList.add('active');
             
             const filter = button.getAttribute('data-filter');
@@ -281,7 +270,6 @@ function setupFilterButtons() {
     });
 }
 
-// Initialize all features
 typeHeadingMenu();
 setupScrollProgress();
 setupBackToTop();
