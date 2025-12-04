@@ -40,7 +40,6 @@ body::after {
     z-index: -1;
 }
 
-/* Floating cherry blossom petals animation */
 @keyframes float {
     0% {
         transform: translateY(-100vh) rotate(0deg);
@@ -74,7 +73,6 @@ body::after {
 .petal:nth-child(8) { left: 80%; animation-duration: 14s; animation-delay: 4s; }
 .petal:nth-child(9) { left: 90%; animation-duration: 22s; animation-delay: 1s; }
 
-/* Scroll progress bar */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -231,6 +229,7 @@ header {
 }
 
 .shopping-cart-title {
+    font-family: "Grenze Gotisch", serif;
     text-align: left;
     font-size: 1.5rem;
     background: linear-gradient(
@@ -291,7 +290,6 @@ header .shopping span {
     }
 }
 
-/* Filter buttons */
 .filter-container {
     display: flex;
     justify-content: center;
@@ -661,7 +659,6 @@ header .shopping span {
     transform: translateY(0);
 }
 
-/* Empty cart message */
 .empty-cart {
     text-align: center;
     padding: 40px 20px;
@@ -673,7 +670,6 @@ header .shopping span {
     margin-bottom: 20px;
 }
 
-/* Back to top button */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -703,7 +699,6 @@ header .shopping span {
     box-shadow: 0 8px 25px rgba(255, 169, 137, 0.7);
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     .list {
         grid-template-columns: repeat(3, 1fr);
