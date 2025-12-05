@@ -108,4 +108,10 @@
   .phone-bottom-nav a.active { color: var(--accent-primary); }
 }
 
+/* Hide bottom nav on screens 901px and above */
+@media (min-width: 901px) {
+  .phone-bottom-nav {
+    display: none !important;
+  }
+}
 

@@ -1320,6 +1320,14 @@ body.page-exit-active {
     font-size: 2rem;
   }
 }
+
+/* Hide bottom nav on screens 901px and above */
+@media (min-width: 901px) {
+  .phone-bottom-nav {
+    display: none !important;
+  }
+}
+
 .contact-hero {
       padding-top: 120px;
       text-align: center;
